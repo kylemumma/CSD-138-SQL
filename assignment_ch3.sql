@@ -32,3 +32,17 @@ SELECT item_id,
 FROM order_items
 WHERE (item_price - discount_amount) * quantity > 500
 ORDER BY item_total DESC;
+
+SELECT order_id,
+        order_date,
+        ship_date
+FROM orders
+WHERE ship_date IS NULL;
+
+SELECT NOW() AS today_unformatted,
+        DATE_FORMAT(NOW(), "%d-%b-%Y") AS today_formatted;
+
+SELECT 100 AS price,
+        .07 AS tax_rate,
+        100 * .07 AS tax_amount,
+        100 + (100 * .07) AS total;
